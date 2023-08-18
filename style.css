@@ -1,0 +1,199 @@
+*{ 
+    margin: 0; 
+    padding: 0;
+    font-family: sans-serif;
+}
+.sr-only {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.banner{
+    width: 100%;
+    height: 100vh;
+    background:  linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(img/wolf-bg.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.navbar-container{
+    z-index: 1;
+    padding: 0 12.5%;
+    margin: auto;
+    background-color: #01010122;
+    backdrop-filter: blur(5px);
+    box-shadow: 3px 0px 4px 3px #00000033;
+    border-bottom: 1px solid cadetblue;
+}
+.navbar{
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo{
+    cursor: pointer;
+}
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+}
+.navbar ul li a{
+    color: #e0e0e0;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.navbar ul li::after{
+    content: '';
+    height: 1px;
+    width: 0%;
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    background-color: cadetblue;
+    transition: all .2s;
+}
+.navbar ul li:hover::after{
+    width: 100%;
+}
+.content{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #e0e0e0;
+}
+.content h1{
+    font-size: 5em;
+    margin-top: 80px;
+    font-weight: 100;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+.content p{
+    font-weight: 100;
+    margin: 20px auto;
+    line-height: 25px;
+}
+.content button{
+    padding: 15px 0;
+    margin: 20px;
+    width: 200px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #e0e0e0;
+    background-color: #00000033;
+    backdrop-filter: blur(5px);
+    box-shadow: 3px 0px 4px 3px #00000033;
+    border-radius: 25px;
+    border: 1px solid cadetblue; 
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all .2s;
+}
+.content button span{
+    background-color: cadetblue;
+    height: 100%;
+    width: 0%;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: all .2s;
+}
+.content button:hover span{
+    width: 100%;
+}
+
+.content button:hover{
+    border: none;
+}
+
+.foot{
+    text-align: center;
+    font-size: 14px;
+    color: #a0a0a0;
+    padding: 15px 0;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    letter-spacing: 5px;
+    background-color: #01010122;
+    backdrop-filter: blur(5px);
+    box-shadow: -3px 0px 4px 3px #00000033;
+    border-top: 1px solid cadetblue;
+}
+
+@media(max-width: 50rem){
+
+    .navbar-container{
+        padding: 0;
+        position: fixed;
+        width: 100%;
+     }
+    .navbar{
+        flex-direction: column; 
+    }
+    .navbar img{
+        margin-bottom: 45px;
+    }
+    .content p{
+        padding: 20px;
+    }
+    .content h1{
+        font-size: 3.6em;
+        margin-top: 100px;
+    }
+}
+
+@media(max-width: 400px){
+
+    .navbar-container{
+        background-color: #01010188;
+        backdrop-filter: blur(8px);
+    }
+    .nav-button{
+        position: absolute;
+        background: url(img/arrow-up.png);
+        background-size: 22px;
+        background-repeat: no-repeat;
+        aspect-ratio: 1;
+        width: 24px;
+        top: 6rem;
+        right: 50%;
+        border: none;
+        transform: translateX(100%);
+    }
+    .navbar img{
+        width: 100px;
+        margin-bottom: 15px;
+    }
+    .navbar ul{ 
+        padding-top: 25vh;
+        height: 100vh; 
+    }
+    .navbar ul li{
+        display: block;
+        padding: 15px 0; 
+    }
+    .navbar ul li::after{
+        bottom: 8px;
+    }
+    .content p{
+        margin: 10 auto;
+    }
+    button{
+        margin: 10px;
+    }
+}
+
